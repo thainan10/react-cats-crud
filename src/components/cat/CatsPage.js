@@ -18,7 +18,7 @@ class CatsPage extends React.Component {
 }
 
 CatsPage.propTypes = {
-  cats: PropTypes.array.isRequired
+  cats: PropTypes.object.isRequired
 };
 
 const mapStateToProps = store => ({

@@ -1,7 +1,7 @@
+import config from 'util/config';
+
 class CatApi {
-  constructor() {
-    this.apiUrl = process.env.API_URL;
-  }
+  static apiUrl = `${config.apiUrl}/cats`;
 
   static getAllCats() {
     return fetch(this.apiUrl)

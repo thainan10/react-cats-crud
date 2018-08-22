@@ -24,7 +24,7 @@ export const catReducer = (state = initialState.cats, action) => {
         ...state,
         loading: false,
         error: action.payload.error,
-        items: []
+        items: {}
       }
     default:
       return state;

@@ -8,7 +8,7 @@ class CatList extends React.Component {
 
     return (
       <ul className="list-group">
-        {cats.map(cat =>
+        {cats.content.map(cat =>
           <li className="list-item" key={cat.id}>
             {cat.name}
           </li>
@@ -19,7 +19,7 @@ class CatList extends React.Component {
 }
 
 CatList.propTypes = {
-  cats: PropTypes.array.isRequired
+  cats: PropTypes.object.isRequired
 };
 
 export default CatList;
