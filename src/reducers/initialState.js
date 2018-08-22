@@ -2,11 +2,15 @@ export default {
   cats: {
     loading: false,
     error: null,
-    items: {}
+    items: {
+      content: []
+    }
   },
   hobbies: {
     loading: false,
     error: null,
-    items: {}
+    items: {
+      content: []
+    }
   }
 };

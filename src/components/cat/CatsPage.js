@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 import CatList from './cat-list/CatList';
+import CatDetails from 'components/cat/cat-details/CatDetails';
 
 class CatsPage extends React.Component {
   render() {
-    const { cats } = this.props;
+    const { cats, match } = this.props;
 
     return (
-      <div className="cats-container">
+      <div className="container">
         <h1>Cats</h1>
-        <CatList cats={cats} />
+        <div className="cats-container">
+          <CatList cats={cats} />
+        </div>
+        <div className="cat-details-container">
+          <Route path={`${match.url}/:id`} component={CatDetails} />
+        </div>
       </div>
     );
   }
