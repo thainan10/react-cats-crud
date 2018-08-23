@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import HobbyList from 'components/hobby/hobby-list/HobbyList';
+
 class CatDetails extends React.Component {
 
   render() {
@@ -12,6 +14,7 @@ class CatDetails extends React.Component {
         <p>Breed: {cat.breed}</p>
         <p>Weight: {cat.weight}</p>
         <p>Temperament: {cat.temperament}</p>
+        <HobbyList hobbies={cat.hobbies} />
       </div>
     );
   }
