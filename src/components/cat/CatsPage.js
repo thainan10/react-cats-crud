@@ -12,9 +12,9 @@ class CatsPage extends React.Component {
 
     return (
       <div className="container">
-        <h1>Cats</h1>
         <div className="cats-container">
-          <CatList cats={cats} />
+          <h1>Cats</h1>
+          <CatList cats={cats} showCatDetails={this.showCatDetails}/>
         </div>
         <div className="cat-details-container">
           <Route path={`${match.url}/:id`} component={CatDetails} />
@@ -22,6 +22,11 @@ class CatsPage extends React.Component {
       </div>
     );
   }
+
+  showCatDetails = id => {
+    const { history, match } = this.props;
+    history.push(`${match.url}/${id}`);
+  };
 }
 
 CatsPage.propTypes = {

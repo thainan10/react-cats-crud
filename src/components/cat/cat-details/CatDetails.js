@@ -21,7 +21,15 @@ CatDetails.propTypes = {
   cat: PropTypes.object.isRequired
 };
 
-const mapStateToProps = store => {
-};
+const mapStateToProps = (store, ownProps) => {
+  let cat = {name: '', breed: '', weight: '', temperament: '', hobbies: []};
+  const cats = store.catsState.items.content;
+  if (cats.length) {
+    const id = +ownProps.match.params.id;
+    cat = Object.assign({},
+      cats.find(cat => cat.id === id));
+  }
+  return { cat };
+}
 
 export default connect(mapStateToProps)(CatDetails);
