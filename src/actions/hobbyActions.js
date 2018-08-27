@@ -5,9 +5,12 @@ import {
   FETCH_HOBBIES_FAILURE
 } from './';
 
-const = fetchHobbies = () => {
+const fetchHobbies = () => {
   return dispatch => {
     dispatch(fetchHobbiesBegin());
+    return hobbyApi.getAllHobbies()
+      .then(hobbies => dispatch(fetchHobbiesSuccess(hobbies)))
+      .catch(error => dispatch(fetchHobbiesFailure(error)));
   };
 };
 

@@ -10,7 +10,9 @@ export default {
     loading: false,
     error: null,
     items: {
-      content: []
+      _embedded: {
+        hobbies: []
+      }
     }
   }
 };

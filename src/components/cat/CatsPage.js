@@ -7,6 +7,12 @@ import CatList from './cat-list/CatList';
 import CatDetails from 'components/cat/cat-details/CatDetails';
 
 class CatsPage extends React.Component {
+
+  showCatDetails = id => {
+    const { history, match } = this.props;
+    history.push(`${match.url}/${id}`);
+  }
+
   render() {
     const { cats, match } = this.props;
 
@@ -22,11 +28,6 @@ class CatsPage extends React.Component {
       </div>
     );
   }
-
-  showCatDetails = id => {
-    const { history, match } = this.props;
-    history.push(`${match.url}/${id}`);
-  };
 }
 
 CatsPage.propTypes = {

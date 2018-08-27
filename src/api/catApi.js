@@ -8,6 +8,16 @@ class CatApi {
     .then(response => response.json())
     .catch(error => error);
   }
+
+  static updateCat(cat) {
+    return fetch(this.apiUrl, {
+      method: 'PUT',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({cat})
+    });
+  }
 }
 
 export default CatApi;

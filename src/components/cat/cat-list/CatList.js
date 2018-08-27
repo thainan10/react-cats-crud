@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class CatList extends React.Component {
+
+  showCatDetails = e =>
+    this.props.showCatDetails(e.currentTarget.dataset.id);
+
   render() {
     const { cats } = this.props;
 
@@ -15,9 +19,6 @@ class CatList extends React.Component {
       </ul>
     );
   }
-
-  showCatDetails = e =>
-    this.props.showCatDetails(e.currentTarget.dataset.id);
 }
 
 CatList.propTypes = {
