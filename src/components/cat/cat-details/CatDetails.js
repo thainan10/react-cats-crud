@@ -31,6 +31,7 @@ class CatDetails extends React.Component {
 
   saveCat = cat => {
     this.props.actions.updateCat(cat);
+    this.toggleEdit();
   };
 
   renderCatEditForm = () => {

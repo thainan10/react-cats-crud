@@ -39,10 +39,12 @@ export const catReducer = (state = initialState.cats, action) => {
       return {
         ...state,
         loading: false,
-        items: [
-          ...state.items.filter(cat => cat.id !== action.payload.cat.id),
-          Object.assign({}, action.payload.cat)
-        ]
+        items: {
+          content: [
+            ...state.items.content.filter(cat => cat.id !== action.payload.cat.id),
+            Object.assign({}, action.payload.cat)
+          ]
+        }
       };
     case UPDATE_CAT_FAILURE:
       return {
