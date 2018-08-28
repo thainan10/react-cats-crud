@@ -40,7 +40,7 @@ export const catReducer = (state = initialState.cats, action) => {
         ...state,
         loading: false,
         items: [
-          ...state.filter(cat => cat.id !== action.payload.cat.id),
+          ...state.items.filter(cat => cat.id !== action.payload.cat.id),
           Object.assign({}, action.payload.cat)
         ]
       };

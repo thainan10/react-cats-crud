@@ -14,7 +14,7 @@ class CatsPage extends React.Component {
   }
 
   render() {
-    const { cats, match } = this.props;
+    const { match, cats } = this.props;
 
     return (
       <div className="container">

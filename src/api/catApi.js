@@ -15,8 +15,10 @@ class CatApi {
       headers: new Headers({
         'Content-Type': 'application/json'
       }),
-      body: JSON.stringify({cat})
-    });
+      body: JSON.stringify(cat)
+    })
+      .then(response => response.json())
+      .catch(error => error);
   }
 }
 
